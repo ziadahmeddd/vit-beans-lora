@@ -1,0 +1,6 @@
+.venv
+kaggle
+models/vit-beans-merged
+models/vit-beans-lora
+*.pdf
+__pycache__

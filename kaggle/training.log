@@ -1,0 +1,73 @@
+[{"stream_name":"stderr","time":10.774527714,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":10.774578151,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":12.276429341,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.276474746,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.276480502,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.276484688,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":13.117887686,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":13.117956555,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":13.117962036,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":13.117968176,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":20.839138969,"data":"\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/84.1 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━\u001b[0m \u001b[32m81.9/84.1 kB\u001b[0m \u001b[31m5.6 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m84.1/84.1 kB\u001b[0m \u001b[31m2.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":77.396916615,"data":"\u001b[?25h2.10.0+cu128 Tesla T4\n"}
+,{"stream_name":"stderr","time":77.59617735,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":77.59623062,"data":"\n"}
+,{"stream_name":"stderr","time":77.596245035,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":165.970173513,"data":"DatasetDict({\n"}
+,{"stream_name":"stdout","time":165.970211369,"data":"    train: Dataset({\n"}
+,{"stream_name":"stdout","time":165.970219423,"data":"        features: ['image_file_path', 'image', 'labels'],\n"}
+,{"stream_name":"stdout","time":165.970225189,"data":"        num_rows: 1034\n"}
+,{"stream_name":"stdout","time":165.970230256,"data":"    })\n"}
+,{"stream_name":"stdout","time":165.970235129,"data":"    validation: Dataset({\n"}
+,{"stream_name":"stdout","time":165.970240772,"data":"        features: ['image_file_path', 'image', 'labels'],\n"}
+,{"stream_name":"stdout","time":165.970246812,"data":"        num_rows: 133\n"}
+,{"stream_name":"stdout","time":165.970252638,"data":"    })\n"}
+,{"stream_name":"stdout","time":165.970257523,"data":"    test: Dataset({\n"}
+,{"stream_name":"stdout","time":165.97026283,"data":"        features: ['image_file_path', 'image', 'labels'],\n"}
+,{"stream_name":"stdout","time":165.970282555,"data":"        num_rows: 128\n"}
+,{"stream_name":"stdout","time":165.970287063,"data":"    })\n"}
+,{"stream_name":"stdout","time":165.97029109,"data":"}) ['angular_leaf_spot', 'bean_rust', 'healthy']\n"}
+,{"stream_name":"stderr","time":166.326748254,"data":"Fast image processor class \u003cclass 'transformers.models.vit.image_processing_vit_fast.ViTImageProcessorFast'\u003e is available for this model. Using slow image processor class. To use the fast image processor class set `use_fast=True`.\n"}
+,{"stream_name":"stderr","time":166.326783656,"data":"\n"}
+,{"stream_name":"stderr","time":166.326787009,"data":"Fast image processor class \u003cclass 'transformers.models.vit.image_processing_vit_fast.ViTImageProcessorFast'\u003e is available for this model. Using slow image processor class. To use the fast image processor class set `use_fast=True`.\n"}
+,{"stream_name":"stderr","time":214.825308763,"data":"ViTForImageClassification LOAD REPORT from: google/vit-base-patch16-224-in21k\n"}
+,{"stream_name":"stderr","time":214.825358587,"data":"Key                 | Status     | \n"}
+,{"stream_name":"stderr","time":214.82536683,"data":"--------------------+------------+-\n"}
+,{"stream_name":"stderr","time":214.825373405,"data":"pooler.dense.weight | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":214.825379627,"data":"pooler.dense.bias   | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":214.825385256,"data":"classifier.weight   | MISSING    | \n"}
+,{"stream_name":"stderr","time":214.825390239,"data":"classifier.bias     | MISSING    | \n"}
+,{"stream_name":"stderr","time":214.825395309,"data":"\n"}
+,{"stream_name":"stderr","time":214.825400212,"data":"Notes:\n"}
+,{"stream_name":"stderr","time":214.825405176,"data":"- UNEXPECTED\t:can be ignored when loading from different task/architecture; not ok if you expect identical arch.\n"}
+,{"stream_name":"stderr","time":214.825410899,"data":"- MISSING\t:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.\n"}
+,{"stream_name":"stderr","time":214.825416391,"data":"\n"}
+,{"stream_name":"stderr","time":214.825421351,"data":"ViTForImageClassification LOAD REPORT from: google/vit-base-patch16-224-in21k\n"}
+,{"stream_name":"stderr","time":214.825433265,"data":"Key                 | Status     | \n"}
+,{"stream_name":"stderr","time":214.82543723,"data":"--------------------+------------+-\n"}
+,{"stream_name":"stderr","time":214.825440769,"data":"pooler.dense.weight | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":214.825461272,"data":"pooler.dense.bias   | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":214.82546878,"data":"classifier.weight   | MISSING    | \n"}
+,{"stream_name":"stderr","time":214.82547435,"data":"classifier.bias     | MISSING    | \n"}
+,{"stream_name":"stderr","time":214.825480406,"data":"\n"}
+,{"stream_name":"stderr","time":214.825485936,"data":"Notes:\n"}
+,{"stream_name":"stderr","time":214.825490833,"data":"- UNEXPECTED\t:can be ignored when loading from different task/architecture; not ok if you expect identical arch.\n"}
+,{"stream_name":"stderr","time":214.825496318,"data":"- MISSING\t:those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.\n"}
+,{"stream_name":"stdout","time":214.82609516,"data":"trainable params: 592,131 || all params: 86,393,094 || trainable%: 0.6854\n"}
+,{"stream_name":"stderr","time":216.539207171,"data":"warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.\n"}
+,{"stream_name":"stderr","time":216.539259889,"data":"\n"}
+,{"stream_name":"stderr","time":216.539264014,"data":"warmup_ratio is deprecated and will be removed in v5.2. Use `warmup_steps` instead.\n"}
+,{"stream_name":"stdout","time":398.255424593,"data":"val : {'eval_loss': 0.023767154663801193, 'eval_accuracy': 0.9924812030075187, 'eval_runtime': 1.7932, 'eval_samples_per_second': 74.17, 'eval_steps_per_second': 1.673, 'epoch': 8.0}\n"}
+,{"stream_name":"stdout","time":399.759568289,"data":"test: {'eval_loss': 0.1117861196398735, 'eval_accuracy': 0.9375, 'eval_runtime': 1.7026, 'eval_samples_per_second': 75.178, 'eval_steps_per_second': 1.175, 'epoch': 8.0}\n"}
+,{"stream_name":"stdout","time":400.64320283,"data":"24K\t/kaggle/working/__notebook__.ipynb\r\n"}
+,{"stream_name":"stdout","time":400.643234474,"data":"2.3M\t/kaggle/working/vit-beans-lora\r\n"}
+,{"stream_name":"stdout","time":400.643241128,"data":"328M\t/kaggle/working/vit-beans-merged\r\n"}
+,{"stream_name":"stderr","time":406.198686648,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":406.198728956,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":406.416735792,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":406.416765971,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":407.139522295,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":407.525809016,"data":"[NbConvertApp] Writing 181329 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":410.139479495,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":411.09914174,"data":"[NbConvertApp] Writing 432614 bytes to __results__.html\n"}
+]
