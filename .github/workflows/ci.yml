@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Run flake8
+        run: flake8 app/ tests/ --max-line-length=120 --count --show-source --statistics
+
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest httpx --extra-index-url https://download.pytorch.org/whl/cpu
+
+      - name: Run tests
+        run: pytest -v tests
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t vit-beans-api .
+
+      - name: Smoke test container
+        run: |
+          docker run -d --name api -p 8000:8000 vit-beans-api
+          for i in $(seq 30); do curl -sf localhost:8000/health && break; sleep 2; done
+          curl -sf -F "file=@samples/bean_rust.jpg" localhost:8000/predict | tee out.json
+          grep -q '"label":"bean_rust"' out.json
+
+  # Runs only on a push to main (not on develop, not on PRs).
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build and push image
+        run: |
+          IMAGE=ghcr.io/${{ github.repository_owner }}/vit-beans-api
+          docker build -t $IMAGE:latest -t $IMAGE:${{ github.sha }} .
+          docker push --all-tags $IMAGE
