@@ -1,6 +1,6 @@
 # Assignment 14 — ViT + LoRA + INT8 Quantization + FastAPI + Docker
 
-Bean-leaf disease classifier (`AI-Lab-Makerere/beans`: angular_leaf_spot, bean_rust, healthy)
+Bean-leaf disease classifier (3 classes: angular_leaf_spot, bean_rust, healthy)
 built on `google/vit-base-patch16-224-in21k`.
 
 ```
