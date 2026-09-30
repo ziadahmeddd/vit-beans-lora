@@ -1,6 +1,6 @@
 # Assignment 14 — ViT + LoRA + INT8 Quantization + FastAPI + Docker
 
-Bean-leaf disease classifier (`AI-Lab-Makerere/beans`: angular_leaf_spot, bean_rust, healthy)
+Bean-leaf disease classifier trained on `AI-Lab-Makerere/beans` (angular_leaf_spot, bean_rust, healthy)
 built on `google/vit-base-patch16-224-in21k`.
 
 ```
@@ -62,3 +62,23 @@ Non-image uploads return `400`. Container RAM at idle after loading: ~525 MiB. I
 python -m venv .venv
 .venv/Scripts/pip install -r requirements.txt datasets kaggle --extra-index-url https://download.pytorch.org/whl/cpu
 ```
+
+## Tests
+```bash
+.venv/Scripts/pip install pytest httpx
+.venv/Scripts/python -m pytest -v tests
+```
+
+## CI/CD (GitHub Actions)
+`.github/workflows/ci.yml`, branches `main` (release) and `develop` (integration):
+
+| trigger | lint | test | build | deploy |
+|---|---|---|---|---|
+| push to `develop` | ✓ | ✓ | ✓ | – |
+| pull request to `main` | ✓ | ✓ | ✓ | – |
+| push to `main` | ✓ | ✓ | ✓ | ✓ |
+
+- **lint**: flake8 on `app/` and `tests/`
+- **test**: pytest against the real INT8 model (`/health`, one prediction per class, non-image → 400)
+- **build**: `docker build` + smoke test of the running container
+- **deploy**: push image to `ghcr.io/<owner>/vit-beans-api:{latest,<sha>}` (main only)
